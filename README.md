@@ -7,8 +7,8 @@ Repository for Essentials UI Automation. This automation is build with Selenium 
 3. [Best Practices](#Best-Practices)
 
 
-# Setup
+## Setup
 
-# Guide To Run Test
+## Guide To Run Test
 
-# Best Practices
+## Best Practices
