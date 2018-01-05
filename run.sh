@@ -10,9 +10,9 @@ which cucumber
 echo $3
 #create directories if they dont exist
 
-mkdir -p $2/jobs/Executionresult/functional-automation/Intellify-Essentials-MD/
-mkdir -p $2/jobs/Executionresult/functional-automation/Intellify-Essentials-MS/
-mkdir -p $2/jobs/Executionresult/functional-automation/Intellify-Essentials-MP/
+mkdir -p $2/jobs/Executionresult/functional-automation/Intellify-Essentials-E2E-MD/
+mkdir -p $2/jobs/Executionresult/functional-automation/Intellify-Essentials-E2E-MS/
+mkdir -p $2/jobs/Executionresult/functional-automation/Intellify-Essentials-E2E-MP/
 
 case "$3" in
 essentials_MD)
