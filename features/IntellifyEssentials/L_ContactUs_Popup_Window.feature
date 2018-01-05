@@ -1,0 +1,6 @@
+@essentials @canvas
+Feature: Intellify Essential contactus Popup
+  Scenario: Verify the element in contactus Popup window for Intellify Essential
+    Given login to intellify essential With Valid username and password-contactus Popup
+    And Verify all element in the home page-contactus Popup
+    Then Click on Contactus Icon and Validate the element
