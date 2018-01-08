@@ -145,6 +145,7 @@ Then(/^Click on Permission in data tools tab and provide permission to users$/) 
     page.send_keys :page_down
     sleep(10)
     page.report_editbtn(row).click
+    sleep(10)
     puts page.report_header
     puts page.report_title
     puts page.report_useraccess

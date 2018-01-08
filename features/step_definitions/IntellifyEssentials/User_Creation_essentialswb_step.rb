@@ -27,6 +27,7 @@ end
 Then(/^Create new User role as Non Admin User$/) do
   on IntellifyEssentialUserCreationPage do |page|
     page.user_info.click
+    sleep(10)
     page.new_user.wait_until_present
     page.new_user.click
     page.first_name.wait_until_present
@@ -37,7 +38,11 @@ Then(/^Create new User role as Non Admin User$/) do
     page.password.set 'Essentialuser@123'
     page.role.select 'Standard User'
     page.add_user.click
-    sleep(15)
+    sleep(3)
+    if page.alert.exists?.should be true then
+      puts page.alert_message1
+      sleep(10)
+    end
     page.data_source.click
     page.logout.click
   end

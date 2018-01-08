@@ -38,6 +38,7 @@ Then(/^Config the Smarter Measure Data Source$/) do
     sleep(5)
     page.sm_save.click
     page.sm_close.click
+    sleep(10)
     page.data_tool.click
     page.data_source.click
     page.smarterstart_btn(row).wait_until_present

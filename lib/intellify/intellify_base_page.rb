@@ -35,11 +35,11 @@ class BasePage < PageFactory
         configatron.reports  = "https://#{@essentialhostname}/api/essentials/reports/v0"
         configatron.schema  = "https://#{@essentialhostname}/api/essentials/reports/v0/canvas-submission_fact/schema/tableau"
 
-      when 'prodautomatedtest.intellify.io'
+      when 'prodsmoketest.intellify.io'
         #Essentials Configuration
         configatron.environment = 'Master-PROD'
-        @essentialhostname = 'prodautomatedtest.intellify.io' #@essentialhostname = "localhost:8080"
-        configatron.hostname1  = 'prodautomatedtest.intellify.io'
+        @essentialhostname = 'prodsmoketest.intellify.io' #@essentialhostname = "localhost:8080"
+        configatron.hostname1  = 'prodsmoketest.intellify.io'
         configatron.essentialloginURL  = "https://#{@essentialhostname}/login/#"
         configatron.essentialWBloginURL  = "https://#{@essentialhostname}/wb/index.html#/login"
         configatron.apiToken1URL = "http://#{@essentialhostname}/user/apiToken"

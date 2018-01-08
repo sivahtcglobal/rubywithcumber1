@@ -23,4 +23,7 @@ element(:newpassword){|b| b.text_field(id:"newPassword")}
 element(:confirmpassword){|b| b.text_field(id:"confirmPassword")}
 element(:save_user){|b| b.div(class:"modal-footer").button(text:"Save")}
 element(:username_clk){|b| b.ul(class:"_3WwviMrlQll24Rq75UxEZ2-header-module-user nav nav-stacked navbar-nav").li.a}
+element(:alert_message1){|b| b.div(class:"LR9GLobpykw5FBvUxt6JN-flashAlertContainer-module-flash-alert-container").span(class:"_3hPSwsnZUJK-OxyeoApl2E-flashAlert-module-message").text}
+element(:alert){|b| b.div(class:"LR9GLobpykw5FBvUxt6JN-flashAlertContainer-module-flash-alert-container").div(class:"b8L9EgjPa6ZCnd5UdHmcx-flashAlert-module-alert-wrapper alert alert-success alert-dismissable")}
+element(:alert_close){|b|b.div(class:"LR9GLobpykw5FBvUxt6JN-flashAlertContainer-module-flash-alert-container").div(class:"b8L9EgjPa6ZCnd5UdHmcx-flashAlert-module-alert-wrapper alert alert-success alert-dismissable").button.span}
 end

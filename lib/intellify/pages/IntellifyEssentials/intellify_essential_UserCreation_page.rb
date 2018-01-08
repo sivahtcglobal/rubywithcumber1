@@ -36,4 +36,8 @@ element(:delete_user){|b| b.div(class:"modal-footer").button(text:"Delete")}
 element(:table_element_edit){|row,b| b.table(class:"table custom-table").tbody.tr(index:row).td(index:5).button(class:"_1176MmK48gFGGejMmzKLFr-usersListTab-module-action-btn btn btn-info",index:0)}
 element(:table_element_changepassword){|row,b| b.table(class:"table custom-table").tbody.tr(index:row).td(index:5).button(class:"_1176MmK48gFGGejMmzKLFr-usersListTab-module-action-btn btn btn-info",index:1)}
 element(:user_save){|b| b.button(text:"Save")}
+element(:alert_message1){|b| b.div(class:"LR9GLobpykw5FBvUxt6JN-flashAlertContainer-module-flash-alert-container").span(class:"_3hPSwsnZUJK-OxyeoApl2E-flashAlert-module-message").text}
+element(:alert){|b| b.div(class:"LR9GLobpykw5FBvUxt6JN-flashAlertContainer-module-flash-alert-container").div(class:"b8L9EgjPa6ZCnd5UdHmcx-flashAlert-module-alert-wrapper alert alert-success alert-dismissable")}
+element(:alert_close){|b|b.div(class:"LR9GLobpykw5FBvUxt6JN-flashAlertContainer-module-flash-alert-container").div(class:"b8L9EgjPa6ZCnd5UdHmcx-flashAlert-module-alert-wrapper alert alert-success alert-dismissable").button.span}
+
 end

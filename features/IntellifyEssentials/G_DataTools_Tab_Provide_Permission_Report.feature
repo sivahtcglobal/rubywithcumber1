@@ -1,5 +1,5 @@
 @essentials @canvas
-Feature: Intellify Essential DataTools page element verification and provide permission to users
+Feature: DataTools page : Provide permission to users
   Scenario:Data tools page Permission Providing
       Given Data Tools tab login to with Valid credentials
       And Verify element in the home page-data tools

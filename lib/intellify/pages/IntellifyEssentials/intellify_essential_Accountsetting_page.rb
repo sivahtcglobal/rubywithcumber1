@@ -48,4 +48,7 @@ element(:acc_timezone_edit){|b| b.div(class:"_1pyB5dXx1Bd06i5dk7NvGf-contactinfo
 element(:acc_time_est){|b| b.div(class:"Select-menu-outer").div(id:"react-select-3--list").div(text:"Eastern Time Zone (US - New York)")}
 element(:acc_time_clk){|b| b.div(class:"Select Select--single is-clearable is-searchable").div(class:"Select-control")}
 element(:acc_timesave){|b| b.div(class:"text-right col-sm-12",index:3).button(text:"Save")}
+  element(:timezone_datatoolpage){|b| b.div(class:"_2e1y71LniLtHcs0VXPkB59-downloadCSVPanel-module-timezone-msg").strong.text}
+element(:export_btn){|b| b.ul(class:"eFmADOgQMfqcJrEIjuKm_-itemList-module-list").li(index:0).div(class:"LrVdZVdNzsIzZTpa04DWA-itemPanel-module-item-panel").div(class:"_2metuZ7-3dsLOkTe8DiQ2o-itemPanel-module-section").div(class:"_1EziSUWUj0iwneEcM9alWI-itemPanel-module-section-body row").div(class:"col-sm-3").button(class:"btn btn-info")}
+element(:time_zone){|timezone,b| b.div(class:"Select-menu-outer").div(id:"react-select-3--list").div(text:timezone)}
 end

@@ -61,6 +61,10 @@ And(/^Verify element in Account setting Page$/) do
     sleep(4)
     page.acc_timesave.click
     sleep(10)
+    page.data_tool.click
+    page.export_btn.click
+    sleep(5)
+    page.timezone_datatoolpage.should == "Eastern Time Zone"
     page.logout.click
   end
   end
@@ -68,13 +72,18 @@ And(/^Verify element in Account setting Page$/) do
 When(/^Config the Avaliable Time zone list (.*)$/) do |timezone|
   on IntellifyEssentialAccSettingPage do |page|
   page.send_keys :page_down
-  page.time_zone_edit.click
-  sleep(10)
-  page.time_zone_clk.click
+  page.acc_timezone_edit.click
+  page.acc_time_clk.click
   sleep(10)
   page.time_zone(timezone).click
   sleep(5)
-  page.time_zonesave.click
+  page.acc_timesave.click
   sleep(5)
+  page.data_tool.click
+  page.export_btn.click
+  sleep(5)
+  page.timezone_datatoolpage.should == timezone+" Time Zone"
+  page.acc_setting.click
+    sleep(10)
   end
 end

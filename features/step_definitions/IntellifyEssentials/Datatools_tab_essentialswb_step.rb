@@ -48,6 +48,9 @@ Then(/^Click on Data Source tab Verify the created Canvas Data Source$/) do
     page.canvas_save.click
     page.canvas_close.click
     sleep(10)
+    page.data_tool.click
+    page.data_source.click
+    sleep(10)
     page.start_btn.wait_until_present
      page.start_btn.click
     sleep(5)

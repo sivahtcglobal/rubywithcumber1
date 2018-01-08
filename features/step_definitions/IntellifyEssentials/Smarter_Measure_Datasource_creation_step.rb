@@ -35,7 +35,7 @@ Then(/^Add new DataSource for organization-Smarter Measure$/) do
     page.datasource_btn.click
     page.sm_datasource.wait_until_present
     page.sm_datasource.parent.button.click
-    sleep(20)
+    sleep(40)
     page.logout_btn.click
   end
   end

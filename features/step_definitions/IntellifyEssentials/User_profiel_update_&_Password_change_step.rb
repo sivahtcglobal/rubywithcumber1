@@ -28,7 +28,12 @@ Then(/^Edit the User Profile for Essential Admin in home page$/) do
     page.email_id.set 'email1@gmail.com'
     sleep(3)
     page.save_user.click
-    sleep(10)
+    sleep(3)
+    if page.alert.exists?.should be true then
+      puts page.alert_message1
+      sleep(10)
+    end
+
   end
 end
 
@@ -42,7 +47,11 @@ And(/^Change Password for Essential Admin$/) do
   page.confirmpassword.set 'EssentialsAdmin@2'
   sleep(3)
   page.save_user.click
-  sleep(10)
+  sleep(3)
+  if page.alert.exists?.should be true then
+    puts page.alert_message1
+    sleep(10)
+  end
     page.logout.click
   end
 end
@@ -68,7 +77,11 @@ Then(/^Reset the Profile to original state for Essential Admin$/) do
     page.email_id.set 'email@gmail.com'
     page.save_user.wait_until_present
     page.save_user.click
-    sleep(10)
+    sleep(3)
+    if page.alert.exists?.should be true then
+      puts page.alert_message1
+      sleep(10)
+    end
     page.username_clk.click
     page.user_passchng.wait_until_present
     page.user_passchng.click
@@ -77,7 +90,11 @@ Then(/^Reset the Profile to original state for Essential Admin$/) do
     page.confirmpassword.set 'EssentialsAdmin@1'
     page.save_user.wait_until_present
     page.save_user.click
-    sleep(10)
+    sleep(3)
+    if page.alert.exists?.should be true then
+      puts page.alert_message1
+      sleep(10)
+    end
     page.username.should == 'Welcome EssentialsAdmin user'
     page.logout.click
   end

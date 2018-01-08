@@ -1,5 +1,5 @@
 @essentials @canvas
-Feature: Intellify Essential DataSource Config and DataTools page element verification
+Feature: Canvas DataSource Config and DataTools page element verification
   Scenario:Data tools page element verification
       Given Data Tools-login to with Valid credentials
       And Verify element Present in the home page-data tools

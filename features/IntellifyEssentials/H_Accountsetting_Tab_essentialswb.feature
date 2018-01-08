@@ -11,7 +11,7 @@ Feature: Intellify Essential Updating New Account settings
 #    Examples:
 #    |timezone|
 #    |Africa/Abidjan|
-#    |Africa/Accra|
+#    |Eastern Time Zone (US - New York)|
 #    |Africa/Addis_Ababa|
 #    |Africa/Algiers|
 #    |Africa/Asmara|

@@ -35,7 +35,7 @@ Then(/^Add new DataSource for organization$/) do
     page.datasource_btn.click
     page.canvas_datasource.wait_until_present
     page.canvas_datasource.parent.button.click
-    sleep(20)
+    sleep(30)
     page.logout_btn.click
   end
   end
