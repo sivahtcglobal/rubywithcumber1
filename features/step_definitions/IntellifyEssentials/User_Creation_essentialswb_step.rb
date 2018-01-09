@@ -38,11 +38,13 @@ Then(/^Create new User role as Non Admin User$/) do
     page.password.set 'Essentialuser@123'
     page.role.select 'Standard User'
     page.add_user.click
-    sleep(3)
+    page.alert.wait_until_present
     if page.alert.exists?.should be true then
-      puts page.alert_message1
-      sleep(10)
+      page.alert_message1.should == "The user #{configatron.essNonAdminusername} Last (#{configatron.essNonAdminusername}) was added."
+    elsif page.alert.exists?.should be false
+      puts 'No Popup ALert'
     end
+    sleep(10)
     page.data_source.click
     page.logout.click
   end

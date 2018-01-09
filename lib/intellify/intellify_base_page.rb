@@ -17,7 +17,9 @@ class BasePage < PageFactory
     configatron.intellifywbpassword = ENV['INTELLIFY_WB_PASSWORD']
     configatron.essNonAdminusername = ENV['ESSENTIAL_USER']
     configatron.essNonAdminpassword = ENV['ESSENTIAL_PASSWORD']
-    configatron.essNonAdminchangepassword = ENV['ESSENTIAL_CHANGE_PASSWORD']
+    configatron.essNonAdminchangepassword = 'Essentialuser@1'
+    configatron.essadminnameupdate = 'EssentialsAdmin1'
+    configatron.essadminpassupdate = 'EssentialsAdmin@2'
 
     case ENV['ENVIRONMENT']
       when 'canvasauto.intellifyqa.net'
