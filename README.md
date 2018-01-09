@@ -12,3 +12,8 @@ Repository for Essentials UI Automation. This automation is build with Selenium 
 ## Guide To Run Test
 
 ## Best Practices
+
+## Local Execution Setup for Non Linux OS
+
+1. Comment the Line number 15 #gem "slack-ruby-client"  in Gemfile
+2. Comment Line number 6 #require 'slack-ruby-client' in intellify.rb
