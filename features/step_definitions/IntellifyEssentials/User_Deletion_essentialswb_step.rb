@@ -35,7 +35,7 @@ Then(/^Delete the Created Non Admin User$/) do
     page.table_element_delete(row).click
     sleep(3)
     page.delete_user.click
-    sleep(5)
+    sleep(10)
     page.data_source.click
     page.logout.click
   end
