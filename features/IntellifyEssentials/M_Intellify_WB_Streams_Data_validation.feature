@@ -1,5 +1,5 @@
 @essentials @canvas
-Feature: Login using valid essential WB Credentials
+Feature: Verify the Data Flow for Canvas and Smarter Measure in Intellify WB
   Scenario Outline: Verify the Data flow to Streams
     Given Intellify workbench login Using Valid credentials
     And Retreive the API Token-Stream Data flow

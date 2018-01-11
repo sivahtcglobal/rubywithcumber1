@@ -1,4 +1,4 @@
-Given(/^Login with valid LDAP User-Delete Smarter Measure DS$/) do
+Given(/^Login with valid Liass Admin User-Delete Smarter Measure DS$/) do
   @username= configatron.essLDAPusername
   @password= configatron.essLDAPpassword
   log_in_intellifyessential(@username,@password)
@@ -31,7 +31,7 @@ Then(/^Click on the Delete Icon to Delete the Smarter Measure Data Source$/) do
     page.sm_delete(row).click
     sleep(5)
     page.delete_popup.click
-    sleep(10)
+    sleep(15)
     page.logout_btn.click
   end
 end

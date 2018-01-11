@@ -1,4 +1,4 @@
-Given(/^Login with valid LDAP User-Delete DS&DC$/) do
+Given(/^Login with valid Liass Admin User-Delete Datasource$/) do
   @username= configatron.essLDAPusername
   @password= configatron.essLDAPpassword
   log_in_intellifyessential(@username,@password)
@@ -24,6 +24,17 @@ Then(/^Click on the Delete Icon to Delete the Data Source$/) do
     sleep(5)
     page.delete_popup.click
     sleep(20)
+    page.logout_btn.click
+  end
+end
+
+Then(/^Click on the Delete Icon to Delete the Moodle Data Source$/) do
+  on IntellifyEssentialDatasourcePage do |page|
+    sleep(10)
+    page.moodle_delete.click
+    sleep(5)
+    page.delete_popup.click
+    sleep(10)
     page.logout_btn.click
   end
 end

@@ -1,5 +1,5 @@
 @essentials @canvas
-Feature: Intellify Essential login
+Feature: Essential UI valid and Invalid login,Forgot Password link
   Scenario: Verify the Login page for Intellify Essential
     Given login with Valid username and password for login page
     And Verify the all element in homepage is displayed

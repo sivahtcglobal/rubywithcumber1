@@ -109,4 +109,9 @@ element(:smarterstart_btn){|row,b| b.ul(class:"eFmADOgQMfqcJrEIjuKm_-itemList-mo
   element(:report_column){|row,b| b.div(class:"sc-bxivhb cZObmX container-fluid",index:row).p(class:"sc-gzVnrw kuXmTB").text}
   element(:report_datatablelink){|row,b| b.div(class:"sc-bxivhb cZObmX container-fluid",index:row).button(class:"sc-dnqmqq CaytI btn btn-link")}
   element(:report_downloadicon){|row,b| b.div(class:"sc-bxivhb cZObmX container-fluid",index:row).button(class:"btn btn-info")}
+#Moodle Data Tools Page Element#
+  element(:moodle_reports_name){|b| b.div(css:"div#csv-download-datachooser")}
+  element(:moodle_report) { |item,b| b.p(text:"#{item}")}
+  element(:download_report_message) { |item, b| b.span(text:"Your download of #{item} is ready. Your browser should begin downloading the file shortly.")}
+
 end

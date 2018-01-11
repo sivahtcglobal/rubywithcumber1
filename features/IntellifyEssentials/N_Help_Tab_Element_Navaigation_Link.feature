@@ -1,5 +1,5 @@
 @essentials @canvas
-Feature: Intellify Essential HELP Page
+Feature: Essential UI HELP Page Validation
   Scenario: Verify the element in HELP Page for Intellify Essential
     Given login to intellify essential With Valid username and password
     And Verify all element in the home page-Help tab

@@ -1,5 +1,5 @@
 @essentials @canvas
-Feature: Intellify Essential Updating New Account settings
+Feature: Essential UI Updating New Account settings
   Scenario: Account settings page element verification
       Given login to with Valid credentials-Account setting tab
       And Verify element Present in the home page -Account setting tab

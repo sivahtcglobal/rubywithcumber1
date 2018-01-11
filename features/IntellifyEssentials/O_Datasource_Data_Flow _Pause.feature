@@ -1,5 +1,5 @@
 @essentials @canvas
-Feature: Data Source Data Flow Pause
+Feature: Essential UI Data Source Data Flow Pause
   Scenario: Data Source Data Flow Pause
       Given login to with Valid credentials-Data Flow Pause
       And Verify element Present in the home page-Data Flow Pause
