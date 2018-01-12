@@ -253,6 +253,16 @@ at_exit do
     @result << e + "\n"
   end
 
-  puts @result
+  #puts @result
+
+  if ENV['SLACK_INTEGRATION'] =="true" then
+      Slack.configure do |config|
+        config.token = configatron.slackToken
+      end
+
+        client = Slack::Web::Client.new
+        client.auth_test
+        client.chat_postMessage(channel: '#tm-qa', text: @result, as_user: true)
+  end
 
 end
