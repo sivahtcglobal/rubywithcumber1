@@ -6,7 +6,7 @@ class BasePage < PageFactory
     configatron.streamDelayTime = 30000
 
     #Slack Integration Token
-    configatron.slackToken = 'XXXXXXXXXXXXXXXXXXXXXXXX'
+    configatron.slackToken = 'xoxb-297858357012-IPxzZ6heBJIamonIzWJUjnv9'
 
     #dev,staging,prod stack
     configatron.essusername = ENV['ESSENTIAL_ADMIN_USER']

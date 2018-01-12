@@ -88,29 +88,29 @@ case browsertype
     puts @firefoxdriver_path
     Selenium::WebDriver::Firefox.driver_path = @firefoxdriver_path
     Before do
-    if browser.nil?
-      browser = Watir::Browser.new :firefox , :http_client => client
-      browser.window.maximize
-    end
-    @browser = browser
+      if browser.nil?
+        browser = Watir::Browser.new :firefox , :http_client => client
+        browser.window.maximize
+      end
+      @browser = browser
     end
   when 'IE' then
     puts "Execution Started.. Initiating IE Browser"
     puts @iedriver_path
     Selenium::WebDriver::IE.driver_path = @iedriver_path
     caps = Selenium::WebDriver::Remote::Capabilities.internet_explorer(
-       # platform: platform,
+        # platform: platform,
         :nativeEvents => false,
         javascript_enabled: true,
         enable_persistent_hover: true,
         require_window_focus: true,
     )
     Before do
-    if browser.nil?
-      browser = Watir::Browser.new :ie , desired_capabilities: caps , :http_client => client
-      browser.window.maximize
-    end
-    @browser = browser
+      if browser.nil?
+        browser = Watir::Browser.new :ie , desired_capabilities: caps , :http_client => client
+        browser.window.maximize
+      end
+      @browser = browser
     end
   when 'SAFARI' then
     puts "Execution Started.. Initiating SAFARI Browser"
@@ -122,13 +122,87 @@ case browsertype
     end
     @browser = browser
 end
+#
+# $tempHash ||=[]
+# $feature =""
+# $featureCount=0
+# $scenarioCount=0
+# $scenarioFailedCount=0
+# $overAllStatus = "PASS"
+# After do |scenario|
+#   # Do something after each scenario.
+#   # The +scenario+ argument is optional, but
+#   # if you use it, you can inspect status with
+#   # the #failed?, #passed? and #exception methods.
+#
+#   if scenario.failed?
+#     $status = "fail"
+#     $overAllStatus = "fail"
+#     #Calculate Scenario Failed Count
+#     $scenarioFailedCount +=1
+#   else if scenario.passed?
+#          $status = "pass"
+#        end
+#   end
+#   tempHash = {"test_name" => scenario.name, "status" => $status}
+#
+#
+#   #Calculate Scenario Count
+#   $scenarioCount += 1
+#
+#   # Calculate Feature Count
+#   if $feature != scenario.feature.name then
+#     $feature = scenario.feature.name
+#     $featureCount += 1
+#   end
+#
+#   $tempHash  << tempHash
+#
+#   File.open("lib/intellify/support_files/temp.json","w") do |f|
+#     f.write($tempHash.to_json)
+#   end
+# end
+#
+# at_exit do
+#
+#
+#   if $overAllStatus == "fail" then
+#     $statusText =  "`FAIL`"
+#   else
+#     $statusText ="*PASS*"
+#   end
+#
+#   if ENV['SLACK_INTEGRATION'] =="true" then
+#       Slack.configure do |config|
+#         config.token = configatron.slackToken
+#       end
+#
+#
+#       @result = " *Project:* Essentials UI Automated Test
+#                 *Environment:* #{configatron.environment}
+#                 *Host:* #{configatron.hostname1}
+#                 *Status:*  #{$statusText}
+#
+#                 *Total No. of Features Executed:* #{$featureCount}
+#                 *Total No. of Scenario Executed:* #{$scenarioCount}
+#                 *Total No. Of Scenarios Failed:* #{$scenarioFailedCount}"
+#
+#         client = Slack::Web::Client.new
+#         client.auth_test
+#         client.chat_postMessage(channel: '#tm-qa', text: @result, as_user: true)
+#   end
+#
+# end
 
 $tempHash ||=[]
+$featureListHash ||=[]
+
 $feature =""
+$featureStatus = "*PASS*"
 $featureCount=0
 $scenarioCount=0
 $scenarioFailedCount=0
-$overAllStatus = "PASS"
+$overAllStatus = "*PASS*"
 After do |scenario|
   # Do something after each scenario.
   # The +scenario+ argument is optional, but
@@ -137,7 +211,8 @@ After do |scenario|
 
   if scenario.failed?
     $status = "fail"
-    $overAllStatus = "fail"
+    $overAllStatus = "`FAIL`"
+    $featureStatus = "`FAIL`"
     #Calculate Scenario Failed Count
     $scenarioFailedCount +=1
   else if scenario.passed?
@@ -146,12 +221,18 @@ After do |scenario|
   end
   tempHash = {"test_name" => scenario.name, "status" => $status}
 
+  if $scenarioCount == 0 then
+    $feature = scenario.feature.name
+    $featureCount = 1
+  end
 
   #Calculate Scenario Count
   $scenarioCount += 1
 
   # Calculate Feature Count
   if $feature != scenario.feature.name then
+    $featureListHash << $feature #+ "--"+$featureStatus
+    $featureStatus = "*PASS*"
     $feature = scenario.feature.name
     $featureCount += 1
   end
@@ -164,39 +245,14 @@ After do |scenario|
 end
 
 at_exit do
+  $featureListHash << $feature #+ "--"+$featureStatus
 
-  puts "*Project:* Essentials UI Automated Test"
-  puts "*Environment:* #{configatron.environment}"
-  puts "*Host:* #{configatron.hostname1}"
+  @result = "*Project:* Essentials UI Automated Test\n*Environment:* #{configatron.environment}\n*Host:* #{configatron.hostname1}\n*Status:*  #{$overAllStatus}\n\n*Total No. of Features Executed:* #{$featureCount}\n*Total No. of Scenario Executed:* #{$scenarioCount}\n*Total No. Of Scenarios Failed:* `#{$scenarioFailedCount}`\n\n*List of Features Verified*\n"
 
-  if $overAllStatus == "fail" then
-    $statusText =  "`fail`"
-  else
-    $statusText ="PASS"
+  $featureListHash.each do |e|
+    @result << e + "\n"
   end
 
-  puts "*Total No. of Features Executed:* #{$featureCount}"
-  puts "*Total No. of Scenario Executed:* #{$scenarioCount}"
-  puts "*Total No. of Scenario Failed:* `#{$scenarioFailedCount}`"
-
-  if ENV['SLACK_INTEGRATION'] =="true" then
-      Slack.configure do |config|
-        config.token = configatron.slackToken
-      end
-
-
-      @result = " *Project:* Essentials UI Automated Test
-                *Environment:* #{configatron.environment}
-                *Host:* #{configatron.hostname1}
-                *Status:*  #{$statusText}
-
-                *Total No. of Features Executed:* #{$featureCount}
-                *Total No. of Scenario Executed:* #{$scenarioCount}
-                *Total No. Of Scenarios Failed:* #{$scenarioFailedCount}"
-
-        client = Slack::Web::Client.new
-        client.auth_test
-        client.chat_postMessage(channel: '#tm-qa', text: @result, as_user: true)
-  end
+  puts @result
 
 end
