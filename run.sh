@@ -18,13 +18,13 @@ echo $3
 
 case "$3" in
 essentials_MD)
-	cucumber -p $3  --format html > $2/jobs/Executionresult/functional-automation/Intellify-Essentials-E2E-MD/`date +"%Y%m%d"`-$1_result.htm
+	sudo cucumber -p $3  --format html > $2/jobs/Executionresult/functional-automation/Intellify-Essentials-E2E-MD/`date +"%Y%m%d"`-$1_result.htm
 	;;
 essentials_MS)
-	cucumber -p $3  --format html > $2/jobs/Executionresult/functional-automation/Intellify-Essentials-E2E-MS/`date +"%Y%m%d"`-$1_result.htm
+	sudo cucumber -p $3  --format html > $2/jobs/Executionresult/functional-automation/Intellify-Essentials-E2E-MS/`date +"%Y%m%d"`-$1_result.htm
 	;;
 essentials_MP)
-  	cucumber -p $3  --format html > $2/jobs/Executionresult/functional-automation/Intellify-Essentials-E2E-MP/`date +"%Y%m%d"`-$1_result.htm
+  	sudo cucumber -p $3  --format html > $2/jobs/Executionresult/functional-automation/Intellify-Essentials-E2E-MP/`date +"%Y%m%d"`-$1_result.htm
 	;;
 *)
  echo "No job found..."
