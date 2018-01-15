@@ -3,8 +3,8 @@
 cd $2
 tag=$4
 
-echo "Pulling master code"
-sudo git pull origin master
+#echo "Pulling master code"
+#sudo git pull origin master
 echo "sudo git checkout tags/$tag"
 sudo git checkout tags/$tag
 #source /etc/profile.d/rvm.sh
