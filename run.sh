@@ -1,6 +1,6 @@
 #!/bin/bash
 /home/ubuntu/.rbenv/bin/rbenv global 
-/home/ubuntu/.rbenv/bin/rbenv global 2.3.1
+#/home/ubuntu/.rbenv/bin/rbenv global 2.3.1
 cd $2
 
 tag=$4
