@@ -64,6 +64,7 @@ GEM
     selenium-webdriver (3.4.3)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    slack-ruby-client
     test-factory (0.5.3)
       watir-webdriver (>= 0.6.4)
     unf (0.1.4)
@@ -88,6 +89,7 @@ DEPENDENCIES
   rest-client
   rspec (= 3.0.0)
   selenium-webdriver (= 3.4.3)
+  slack-ruby-client
   test-factory (= 0.5.3)
   watir-webdriver (~> 0.8.0)
 
