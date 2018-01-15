@@ -122,77 +122,7 @@ case browsertype
     end
     @browser = browser
 end
-#
-# $tempHash ||=[]
-# $feature =""
-# $featureCount=0
-# $scenarioCount=0
-# $scenarioFailedCount=0
-# $overAllStatus = "PASS"
-# After do |scenario|
-#   # Do something after each scenario.
-#   # The +scenario+ argument is optional, but
-#   # if you use it, you can inspect status with
-#   # the #failed?, #passed? and #exception methods.
-#
-#   if scenario.failed?
-#     $status = "fail"
-#     $overAllStatus = "fail"
-#     #Calculate Scenario Failed Count
-#     $scenarioFailedCount +=1
-#   else if scenario.passed?
-#          $status = "pass"
-#        end
-#   end
-#   tempHash = {"test_name" => scenario.name, "status" => $status}
-#
-#
-#   #Calculate Scenario Count
-#   $scenarioCount += 1
-#
-#   # Calculate Feature Count
-#   if $feature != scenario.feature.name then
-#     $feature = scenario.feature.name
-#     $featureCount += 1
-#   end
-#
-#   $tempHash  << tempHash
-#
-#   File.open("lib/intellify/support_files/temp.json","w") do |f|
-#     f.write($tempHash.to_json)
-#   end
-# end
-#
-# at_exit do
-#
-#
-#   if $overAllStatus == "fail" then
-#     $statusText =  "`FAIL`"
-#   else
-#     $statusText ="*PASS*"
-#   end
-#
-#   if ENV['SLACK_INTEGRATION'] =="true" then
-#       Slack.configure do |config|
-#         config.token = configatron.slackToken
-#       end
-#
-#
-#       @result = " *Project:* Essentials UI Automated Test
-#                 *Environment:* #{configatron.environment}
-#                 *Host:* #{configatron.hostname1}
-#                 *Status:*  #{$statusText}
-#
-#                 *Total No. of Features Executed:* #{$featureCount}
-#                 *Total No. of Scenario Executed:* #{$scenarioCount}
-#                 *Total No. Of Scenarios Failed:* #{$scenarioFailedCount}"
-#
-#         client = Slack::Web::Client.new
-#         client.auth_test
-#         client.chat_postMessage(channel: '#tm-qa', text: @result, as_user: true)
-#   end
-#
-# end
+
 
 $tempHash ||=[]
 $featureListHash ||=[]
