@@ -1,11 +1,13 @@
 #!/bin/bash
+/home/ubuntu/.rbenv/bin/rbenv global 
+/home/ubuntu/.rbenv/bin/rbenv global 2.3.1
 cd $2
 
 tag=$4
 
 echo "sudo git checkout tags/v$tag"
 sudo git checkout tags/v$tag
-source /etc/profile.d/rvm.sh
+#source /etc/profile.d/rvm.sh
 which cucumber
 echo $3
 #create directories if they dont exist
