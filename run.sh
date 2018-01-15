@@ -33,4 +33,3 @@ esac
 aws s3 sync $2/jobs/Executionresult/ s3://intellifyqa/
 ls -l $2/jobs/Executionresult/
 sudo git checkout master
-sudo git pull
