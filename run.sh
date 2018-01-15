@@ -5,8 +5,8 @@ cd $2
 
 tag=$4
 
-echo "sudo git checkout tags/v$tag"
-sudo git checkout tags/v$tag
+echo "sudo git checkout tags/$tag"
+sudo git checkout tags/$tag
 #source /etc/profile.d/rvm.sh
 which cucumber
 echo $3
