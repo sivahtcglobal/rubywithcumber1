@@ -57,6 +57,7 @@ prefs = {
 
 
 if OS.linux? == true
+  require 'headless'
   headless = Headless.new #:destroy_at_exit => false
   headless.start
   puts "Using HEADLESS = true"
