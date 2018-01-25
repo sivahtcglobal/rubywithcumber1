@@ -1,4 +1,4 @@
-@essentials @canvas
+@essentials @canvas @smoketest
 Feature: Canvas Data sources creation
   Scenario: Data source & data collection creation for Intellify Essential
       Given login to with Valid credentials-datasource creation

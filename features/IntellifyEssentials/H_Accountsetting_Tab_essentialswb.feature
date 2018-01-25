@@ -1,4 +1,4 @@
-@essentials @canvas
+@essentials @canvas @smoketest
 Feature: Essential UI Updating New Account settings
   Scenario: Account settings page element verification
       Given login to with Valid credentials-Account setting tab

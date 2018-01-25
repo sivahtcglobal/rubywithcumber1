@@ -1,4 +1,4 @@
-@essentials @moodle
+@essentials @moodle @smoketest
 Feature: Moodle Data source creation
     Scenario: Moodle Data source creation
       Given login to with Valid credentials as Essential Admin-Moodle

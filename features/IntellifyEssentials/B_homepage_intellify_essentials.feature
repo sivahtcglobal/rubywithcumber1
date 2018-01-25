@@ -1,4 +1,4 @@
-@essentials @canvas
+@essentials @canvas @smoketest
 Feature: Essential UI home page element validation
   Scenario: Verify the element in home page for Intellify Essential
       Given login to intellify essential page username and password

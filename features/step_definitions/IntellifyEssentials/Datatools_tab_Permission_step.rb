@@ -101,10 +101,11 @@ Then(/^Click on Permission in data tools tab and provide permission to users$/) 
     until page.report_name(row) == 'Canvas_Enrollments_Table'
       row += 1
     end
+    @browser.execute_script('arguments[0].scrollIntoView();', page.report_editbtn(row))
+    @browser.send_keys :page_up
     puts page.report_name(row)
     puts page.report_users(row)
     page.report_editbtn(row).click
-    page.send_keys :page_down
     sleep(10)
     puts page.report_header
     puts page.report_title
@@ -117,6 +118,8 @@ Then(/^Click on Permission in data tools tab and provide permission to users$/) 
     until page.report_name(row) == 'Canvas_User_Profile_Table'
       row += 1
     end
+    @browser.execute_script('arguments[0].scrollIntoView();', page.report_editbtn(row))
+    @browser.send_keys :page_up
     puts page.report_name(row)
     puts page.report_users(row)
     page.report_editbtn(row).click
@@ -140,9 +143,10 @@ Then(/^Click on Permission in data tools tab and provide permission to users$/) 
     until page.report_name(row) == 'Canvas_Student_Activity_Table'
       row += 1
     end
+    @browser.execute_script('arguments[0].scrollIntoView();', page.report_editbtn(row))
+    @browser.send_keys :page_up
     puts page.report_name(row)
     puts page.report_users(row)
-    page.send_keys :page_down
     sleep(10)
     page.report_editbtn(row).click
     sleep(10)

@@ -1,4 +1,4 @@
-@essentials @smartermeasure
+@essentials @smartermeasure @smoketest
 Feature: Smarter Measure Data source creation
     Scenario: Smarter Measure Data source creation
       Given login to with Valid credentials as Essential Admin-Smarter Measure

@@ -1,4 +1,4 @@
-@essentials @canvas
+@essentials @canvas @smoketest
 Feature: Intellify Essential New User Creation
   Scenario: User Creation in Account setting tab
       Given login to with Valid credentials-User Creation

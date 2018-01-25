@@ -1,4 +1,4 @@
-@essentials @canvas
+@essentials @canvas @smoketest
 Feature: Essential UI Delete the Created Canvas Data Source
   Scenario: Delete created Essential DataSource
     Given Login with valid Liass Admin User-Delete Datasource

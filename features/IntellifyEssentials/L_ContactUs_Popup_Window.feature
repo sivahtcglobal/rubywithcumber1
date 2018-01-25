@@ -1,4 +1,4 @@
-@essentials @canvas
+@essentials @canvas @smoketest
 Feature:Essential Contact Us Popup Window Validation
   Scenario: Verify the element in contactus Popup window for Intellify Essential
     Given login to intellify essential With Valid username and password-contactus Popup

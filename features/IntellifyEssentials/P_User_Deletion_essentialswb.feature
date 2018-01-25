@@ -1,4 +1,4 @@
-@essentials @canvas
+@essentials @canvas @smoketest
 Feature: Essential UI User Deletion
   Scenario: User Deletion in Account setting tab
       Given login to with Valid credentials-User Deletion
