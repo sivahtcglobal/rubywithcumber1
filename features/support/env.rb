@@ -180,9 +180,9 @@ at_exit do
 
   @result = "*Project:* Essentials UI Automated Test\n*Environment:* #{configatron.environment}\n*Host:* #{configatron.hostname1}\n*Status:*  #{$overAllStatus}\n\n*Total No. of Features Executed:* #{$featureCount}\n*Total No. of Scenario Executed:* #{$scenarioCount}\n*Total No. Of Scenarios Failed:* `#{$scenarioFailedCount}`\n\n*List of Features Verified*\n"
 
-  $featureListHash.each do |e|
-    @result << e + "\n"
-  end
+  # $featureListHash.each do |e|
+  #   @result << e + "\n"
+  # end
 
   #puts @result
 
@@ -193,7 +193,7 @@ at_exit do
 
         client = Slack::Web::Client.new
         client.auth_test
-        client.chat_postMessage(channel: '#tm-qa', text: @result, as_user: true)
+        client.chat_postMessage(channel: 'qaonly', text: @result, as_user: true)
   end
 
 end
