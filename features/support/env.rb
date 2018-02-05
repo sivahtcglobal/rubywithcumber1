@@ -78,7 +78,7 @@ case browsertype
     Before do
       if browser.nil?
         browser = Watir::Browser.new :chrome , :http_client => client , desired_capabilities: caps , :prefs => prefs
-        browser.window.maximize
+        #browser.window.maximize
       end
       @browser = browser
     end
