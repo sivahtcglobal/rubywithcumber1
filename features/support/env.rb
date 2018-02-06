@@ -178,7 +178,7 @@ end
 at_exit do
   $featureListHash << $feature #+ "--"+$featureStatus
 
-  @result = "*Project:* Essentials UI Automated Test\n*Environment:* #{configatron.environment}\n*Host:* #{configatron.hostname1}\n*Status:*  #{$overAllStatus}\n\n*Total No. of Features Executed:* #{$featureCount}\n*Total No. of Scenario Executed:* #{$scenarioCount}\n*Total No. Of Scenarios Failed:* `#{$scenarioFailedCount}`\n\n*List of Features Verified*\n"
+  @result = "*Project:* Essentials UI Automated Test\n*Environment:* #{configatron.environment}\n*Host:* #{configatron.hostname1}\n*Status:*  #{$overAllStatus}\n\n*Total No. of Features Executed:* #{$featureCount}\n*Total No. of Scenario Executed:* #{$scenarioCount}\n*Total No. Of Scenarios Failed:* `#{$scenarioFailedCount}`\n"#\n*List of Features Verified*\n"
 
   # $featureListHash.each do |e|
   #   @result << e + "\n"
