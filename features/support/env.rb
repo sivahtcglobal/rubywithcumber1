@@ -16,9 +16,9 @@ browsertype = ENV['BROWSER'] unless ENV['BROWSER'] == nil
 headless = false
 headless = ENV['HEADLESS'] unless ENV['HEADLESS'] == nil
 
-Watir.default_timeout = 20
+Watir.default_timeout = 120
 client = Selenium::WebDriver::Remote::Http::Default.new
-client.timeout = 20 # seconds default is 60
+client.timeout = 120 # seconds default is 60
 
 #Configure Driver with respect to the OS its currently running
 
