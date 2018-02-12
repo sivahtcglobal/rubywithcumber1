@@ -42,6 +42,7 @@ end
 
 Then(/^click on the data tools tab$/) do
   on IntellifyEssentialHomePage do |page|
+    page.data_tool.wait_until_present
     page.data_tool.click
   end
 end
