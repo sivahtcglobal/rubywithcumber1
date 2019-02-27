@@ -1,0 +1,4 @@
+class WorkbenchComputeStream < BasePage
+
+
+end
